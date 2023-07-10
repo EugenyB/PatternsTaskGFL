@@ -1,6 +1,6 @@
 package patterns.example;
 
-class Rental {
+public class Rental {
     private final Movie movie;
     private final int daysRented;
 
@@ -15,5 +15,13 @@ class Rental {
 
     public Movie getMovie() {
         return movie;
+    }
+
+    public double getAmount() {
+        return movie.getAmount(daysRented);
+    }
+
+    public double getBonus() {
+        return movie.getBonus(daysRented);
     }
 }

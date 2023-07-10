@@ -2,11 +2,7 @@ package patterns.example;
 
 public class Movie {
     private final String title;
-    private final MovieType priceCode;
-
-    public enum MovieType {
-        REGULAR, NEW_RELEASE, CHILDRENS
-    }
+    private MovieType priceCode;
 
     public Movie(String title, MovieType priceCode) {
         this.title = title;
@@ -21,4 +17,11 @@ public class Movie {
         return title;
     }
 
+    public double getAmount(int daysRented) {
+        return getPriceCode().getAmount(daysRented);
+    }
+
+    public double getBonus(int daysRented) {
+        return getPriceCode().getBonus(daysRented);
+    }
 }
